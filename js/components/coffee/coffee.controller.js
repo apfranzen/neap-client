@@ -10,12 +10,15 @@
 
   function coffeeController($scope, coffeeService) {
     /*jshint validthis: true */
-    this.greeting = 'Coffee World!';
-    console.log(coffeeService.test);
-
+    const vm = this;
     coffeeService.getAllCoffee()
-    .then((data) => {console.log(data);})
-    .then((err) => {console.log(err);})
+    .then((data) => {
+      console.log('data: ', data);
+      vm.coffee = data.data.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
 
 })();

@@ -1,3 +1,25 @@
-<p>
-  {{coffeeCtrl.greeting}}
-</p>
+<h1>All Coffees</h1>
+<br><br>
+
+<button ng-click="coffeeCtrl.addCoffee()" class="btn btn-success">Add Coffee</button>
+
+<br><br><br>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Name: </th>
+    <th>Roaster: </th>
+    <th>Origin: </th>
+    <th>Roast: </th>
+    <th>Caffeine: </th>
+    <th>Decaf: </th>
+  </tr>
+  <tr ng-repeat="coffee in coffeeCtrl.coffee">
+    <td>{{coffee.name}}</td>
+    <td>{{coffee.roaster}}</td>
+    <td>{{coffee.origin}}</td>
+    <td>{{coffee.roast}}</td>
+    <td>{{coffee.caffeine}}</td>
+    <td>{{coffee.decaf}}</td>
+  </tr>
+</table>
