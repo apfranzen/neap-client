@@ -6,11 +6,12 @@
     .module('myApp.components.coffee', [])
     .controller('coffeeController', coffeeController);
 
-  coffeeController.$inject = ['$scope'];
+  coffeeController.$inject = ['$scope', 'coffeeService'];
 
-  function coffeeController($scope) {
+  function coffeeController($scope, coffeeService) {
     /*jshint validthis: true */
-    this.greeting = 'Hello World!';
+    this.greeting = 'Coffee World!';
+    console.log(coffeeService.test);
   }
 
 })();
