@@ -18,11 +18,11 @@
       }
 
       this.addCoffee = function(coffee) {
-        return $http.post({
+        return $http({
           method: 'POST',
           url: 'http://localhost:8000/coffee',
-          data: coffee,
-          headers: {}});
+          data: coffee
+        });
       }
     }
 
