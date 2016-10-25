@@ -11,7 +11,7 @@
   userService.$inject = ['$http'];
 
     function coffeeService($http) {
-      const baseURL = 'https://enigmatic-gorge-65304.herokuapp.com/coffee'
+      const baseURL = 'https://localhost:8000/coffee'
       this.getAllCoffee = function() {
         return $http.get(baseURL);
       };
@@ -30,7 +30,7 @@
     }
 
     function userService($http) {
-      const baseURL = 'https://enigmatic-gorge-65304.herokuapp.com/user';
+      const baseURL = 'https://localhost:8000/user';
 
       this.login = function(user) {
         return $http({
