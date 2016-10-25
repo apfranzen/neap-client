@@ -11,25 +11,26 @@
   userService.$inject = ['$http'];
 
     function coffeeService($http) {
+      const baseURL = 'https://enigmatic-gorge-65304.herokuapp.com/coffee'
       this.getAllCoffee = function() {
-        return $http.get('http://localhost:8000/coffee');
+        return $http.get(baseURL);
       };
 
       this.getSingleCoffee = function(id) {
-        return $http.get(`http://localhost:8000/coffee/${id}`);
+        return $http.get(`baseURL/${id}`);
       };
 
       this.addCoffee = function(coffee) {
         return $http({
           method: 'POST',
-          url: 'http://localhost:8000/coffee',
+          url: baseURL,
           data: coffee
         });
       };
     }
 
     function userService($http) {
-      const baseURL = 'http://localhost:8000/user/';
+      const baseURL = 'https://enigmatic-gorge-65304.herokuapp.com/user';
 
       this.login = function(user) {
         return $http({
