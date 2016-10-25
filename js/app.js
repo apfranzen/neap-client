@@ -10,7 +10,8 @@
       'myApp.config',
       'myApp.components.main',
       'myApp.components.coffee',
-      'myApp.services'
+      'myApp.services',
+      'myApp.components.user'
     ]);
 
 })();
