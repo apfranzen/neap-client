@@ -6,19 +6,20 @@
     .module('myApp.components.user', [])
     .controller('userController', userController);
 
-  userController.$inject = ['$scope', 'userService'];
+  userController.$inject = ['userService'];
 
-  function userController($scope, userService) {
+  function userController(userService) {
+    /*jshint validthis: true */
     const vm = this;
-    this.greeting = 'Hello World';
+    vm.test = 'hello, world!';
     vm.user = {};
+    vm.newuser = {};
     vm.onSubmit = function() {
       userService.login(vm.user)
       .then((user) => {
         localStorage.setItem('token', user.data.token);
       });
-      // to reset the form
-      vm.user = {}
+      vm.user = {};
     };
     // to test that the userService is wired correctly
     // console.log(userService.test);
@@ -27,7 +28,7 @@
       .then((user) => {
         localStorage.setItem('token', user.data.token);
       });
-      vm.newUser = {};      
+      vm.newUser = {};
     };
   }
 
